@@ -1,0 +1,47 @@
+{
+  "name": "@sudoo/express-test",
+  "version": "1.0.0",
+  "description": ":imp: Test util for Express package",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SudoDotDog/Sudoo-Express-Test.git"
+  },
+  "keywords": [
+    "express",
+    "test",
+    "sudoo"
+  ],
+  "author": "WMXPY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SudoDotDog/Sudoo-Express-Test/issues"
+  },
+  "homepage": "https://github.com/SudoDotDog/Sudoo-Express-Test#readme",
+  "peerDependencies": {
+    "@sudoo/express": "*"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@sudoo/pattern": "^1.6.1",
+    "@sudoo/io": "^1.8.0",
+    "@sudoo/triforce": "^2.8.3",
+    "@sudoo/express": "^1.16.0",
+    "@sudoo/verify": "^1.16.0"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "script/**/*.ts",
+      "src/**/*.ts"
+    ],
+    "instrument": true,
+    "reporter": [
+      "json",
+      "text-summary"
+    ],
+    "report-dir": "coverage",
+    "sourceMap": true
+  }
+}
