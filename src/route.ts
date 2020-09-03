@@ -6,11 +6,11 @@
 
 import { ISudooExpressRoute } from "@sudoo/express";
 
-export class ExpressRouterExecuter {
+export class SudooExpressRouterExecuter {
 
-    public static create(route: ISudooExpressRoute): ExpressRouterExecuter {
+    public static create(route: ISudooExpressRoute): SudooExpressRouterExecuter {
 
-        return new ExpressRouterExecuter(route);
+        return new SudooExpressRouterExecuter(route);
     }
 
     private readonly _route: ISudooExpressRoute;

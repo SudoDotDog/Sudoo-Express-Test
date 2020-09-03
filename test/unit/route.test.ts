@@ -8,9 +8,10 @@
 import { ISudooExpressRoute } from '@sudoo/express';
 import { expect } from 'chai';
 import * as Chance from 'chance';
+import { SudooExpressRouterExecuter } from '../../src';
 import { createMockRoute } from '../mock/route';
 
-describe('Given {ExpressRouteExecuter} Class', (): void => {
+describe('Given {SudooExpressRouterExecuter} Class', (): void => {
 
     const chance: Chance.Chance = new Chance('sudoo-express-test-route');
 
@@ -18,6 +19,8 @@ describe('Given {ExpressRouteExecuter} Class', (): void => {
 
         const mockRoute: ISudooExpressRoute = createMockRoute(chance);
 
-        expect(headHandler).to.be.exist;
+        const executer: SudooExpressRouterExecuter = SudooExpressRouterExecuter.create(mockRoute);
+
+        expect(executer).to.be.instanceOf(SudooExpressRouterExecuter);
     });
 });
