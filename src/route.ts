@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Express_Test
- * @description Executer
+ * @description Route
  */
 
 import { ISudooExpressRoute } from "@sudoo/express";
