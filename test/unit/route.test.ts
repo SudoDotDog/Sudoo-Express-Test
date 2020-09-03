@@ -5,22 +5,19 @@
  * @package Unit Test
  */
 
+import { ISudooExpressRoute } from '@sudoo/express';
 import { expect } from 'chai';
 import * as Chance from 'chance';
+import { createMockRoute } from '../mock/route';
 
-describe('Given (Handlers) Express handler creator', (): void => {
+describe('Given {ExpressRouteExecuter} Class', (): void => {
 
-    const chance: Chance.Chance = new Chance('sudoo-express-handlers');
+    const chance: Chance.Chance = new Chance('sudoo-express-test-route');
 
-    it('should be able to create header handler', (): void => {
+    it('should be able to construct', (): void => {
 
-        const appName: string = chance.string();
-        const version: string = chance.string();
-        const app: SudooExpressApplication = SudooExpressApplication.create(appName, version);
+        const mockRoute: ISudooExpressRoute = createMockRoute(chance);
 
-        const headHandler = createHeaderHandler(app);
-
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         expect(headHandler).to.be.exist;
     });
 });
