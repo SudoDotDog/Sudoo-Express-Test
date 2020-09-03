@@ -4,7 +4,7 @@
  * @description Route
  */
 
-import { ISudooExpressRoute } from "@sudoo/express";
+import { ISudooExpressRoute, ROUTE_MODE, SudooExpressErrorInfo } from "@sudoo/express";
 
 export class SudooExpressRouterExecuter {
 
@@ -18,5 +18,17 @@ export class SudooExpressRouterExecuter {
     private constructor(route: ISudooExpressRoute) {
 
         this._route = route;
+    }
+
+    public get length(): number {
+        return this._route.groups.length;
+    }
+    public get mode(): ROUTE_MODE {
+        return this._route.mode;
+    }
+
+    public simulateError(code: number, error: Error): SudooExpressErrorInfo {
+
+        return this._route.onError(code, error);
     }
 }
